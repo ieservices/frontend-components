@@ -12,7 +12,18 @@
  * @ide         Created by PhpStorm
  * @description The javascript file jquery.listeffects it to ...
  */
-(function ($) {
+(function (factory) {
+    if (typeof define === 'function' && define.amd) {
+        // AMD
+        define(['jquery'], factory);
+    } else if (typeof exports === 'object') {
+        // CommonJS
+        factory(require('jquery'));
+    } else {
+        // Browser globals
+        factory(jQuery);
+    }
+}(function ($) {
 
     var list;
     var delay = 1000;
@@ -60,4 +71,4 @@
 
     }
 
-}(jQuery));
+}(jQuery)));
