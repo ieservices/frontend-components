@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>#
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../jquery.list-effects.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            jQuery('#myList ul li').listEffect(
+                    {delay: '2000', attribute: 'color', value: '#ccc'}
+            );
+        });
+    </script>
+</head>
+<body>
+<div id="myList">
+    <h4>This is my list</h4>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+    </ul>
+</div>
+</body>
+</html>

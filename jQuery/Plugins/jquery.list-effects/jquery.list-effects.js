@@ -25,16 +25,18 @@
     }
 }(function ($) {
 
+    var $self = this;
     var list;
     var delay = 1000;
     var attribute, value;
     var selectedIndex = 0;
+    var interval;
 
     var applyEffectOnNextItem = function () {
 
         var elem = $(list);
 
-        if (elem.length > 0) {
+        if (elem.length > 1) {
 
             var previousItem = selectedIndex - 1;
 
@@ -50,13 +52,18 @@
 
             selectedIndex++;
         }
+        else{
+            console.error('The selection must contain out of more then one element and is invalid.');
+
+            clearInterval(interval);
+        }
     };
 
     /**
      * applying the effect in the given interval time
      */
     var start = function () {
-        setInterval(applyEffectOnNextItem, delay);
+        interval = setInterval(applyEffectOnNextItem, delay);
     };
 
     /**
@@ -69,6 +76,12 @@
         value = options.value;
         start();
 
-    }
+    };
+
+    var $instance = {
+        start: start
+    };
+
+    return function(){};
 
 }(jQuery)));
