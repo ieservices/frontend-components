@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>jQuery Plugin List-Effects // Demo Link Events with start index for effects</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../jquery.list-effects.js"></script>
+    <script>
+
+        /**
+         * this method is called, when starting to go though the list
+         *
+         * @param event
+         */
+        var onStart = function(event){
+            jQuery('#result').html(this.innerText + ' selected on start');
+        };
+
+        /**
+         * this method is called on click of every event
+         *
+         * @param event
+         */
+        var onClick = function(event){
+            jQuery('#result').html(this.innerText + ' clicked');
+        };
+
+        jQuery(document).ready(function () {
+            jQuery('#myList ul li a').listEffect(
+                    {delay: 1000, attribute: 'color', value: '#ccc', startIndex: 1},
+                    {type: 'click', method: onClick},
+                    {index: 1, type: 'hover', method: onStart}
+            );
+        });
+    </script>
+</head>
+<body>
+<h4>jQuery Plugin List-Effects // Demo Link List with start index for effects</h4>
+<div id="myList">
+    <h4>This is my list</h4>
+    <ul>
+        <li><a href="#item-1">Item 1</a></li>
+        <li><a href="#item-2">Item 2</a></li>
+        <li><a href="#item-3">Item 3</a></li>
+        <li><a href="#item-4">Item 4</a></li>
+    </ul>
+    <div id="result"></div>
+</div>
+</body>
+</html>
