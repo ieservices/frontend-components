@@ -32,16 +32,16 @@
     var data = {elements: []};
 
     var config = {
-        attribute: '',
-        attributes: {},
-        value: '',
-        delay:  1000,
-        startIndex: 0,
+        attribute  : '',
+        attributes : {},
+        value      : '',
+        delay      : 1000,
+        startIndex : 0,
         activeClass: 'activeEffect',
-        trigger: {
+        trigger    : {
             start: {}
         },
-        callback: {}
+        callback   : {}
     };
 
     /**
@@ -56,23 +56,22 @@
 
             if (previousItem >= config.startIndex) {
 
-                if(typeof data.elements[previousItem-1] !== 'undefined'){
+                if (typeof data.elements[previousItem - 1] !== 'undefined') {
 
-                    if(typeof data.elements[previousItem-1].style == 'undefined' ||
-                        data.elements[previousItem-1].style.length == 0)
-                    {
+                    if (typeof data.elements[previousItem - 1].style == 'undefined' ||
+                        data.elements[previousItem - 1].style.length == 0) {
                         // remove the previously added styles
-                        $(elem[previousItem-1]).removeAttr('style');
+                        $(elem[previousItem - 1]).removeAttr('style');
                     }
-                    else{
+                    else {
                         // remove the previously added styles
-                        $(elem[previousItem-1]).attr(data.elements[previousItem-1].style);
+                        $(elem[previousItem - 1]).attr(data.elements[previousItem - 1].style);
                     }
                 }
 
-                if($(elem[previousItem-1]).hasClass(config.activeClass)){
+                if ($(elem[previousItem - 1]).hasClass(config.activeClass)) {
                     // remove the previously added class
-                    $(elem[previousItem-1]).removeClass(config.activeClass);
+                    $(elem[previousItem - 1]).removeClass(config.activeClass);
                 }
             }
 
@@ -80,12 +79,12 @@
                 selectedIndex = config.startIndex;
             }
 
-            if(typeof data.elements[selectedIndex] == 'undefined'){
+            if (typeof data.elements[selectedIndex] == 'undefined') {
                 data.elements[selectedIndex] = {};
             }
 
             // store the old style
-            data.elements[selectedIndex].style =  $(elem[selectedIndex]).attr('style');
+            data.elements[selectedIndex].style = $(elem[selectedIndex]).attr('style');
 
             // go through all attributes
             for (var i = 0; i < config.attributes.length; i++) {
@@ -93,7 +92,7 @@
                 $(elem[selectedIndex]).css(property[0], property[1]);
             }
 
-            if(config.attribute.length > 0){
+            if (config.attribute.length > 0) {
                 $(elem[selectedIndex]).css(config.attribute, config.value);
             }
 
@@ -102,7 +101,7 @@
 
             selectedIndex++;
         }
-        else{
+        else {
             console.error('The selection must contain out of more then one element and is invalid.');
 
             clearInterval(interval);
@@ -116,25 +115,33 @@
 
         var elem = $(list);
 
-        if(typeof config.callback.type == 'string' &&
-            typeof config.callback.method == 'function'){
-            $(elem).on(config.callback.type, config.callback.method);
+        if (config.callback !== null) {
+
+            if (typeof config.callback.type == 'string' &&
+                typeof config.callback.method == 'function') {
+                $(elem).on(config.callback.type, config.callback.method);
+            }
         }
 
         /**
          * if the trigger configuration is set - example
          * @example config.trigger = {index: 4, type: 'click'};
          */
-        if(typeof config.trigger.start.index == 'number' &&
-            typeof config.trigger.start.type == 'string'){
 
-            var startTrigger = config.trigger.start;
+        if (config.trigger.start !== null) {
 
-            if(startTrigger.index >= 0 && startTrigger.index < elem.length){
-                if(typeof startTrigger.method == 'function'){
-                    $(elem[startTrigger.index]).on(startTrigger.type, startTrigger.method);
+
+            if (typeof config.trigger.start.index == 'number' &&
+                typeof config.trigger.start.type == 'string') {
+
+                var startTrigger = config.trigger.start;
+
+                if (startTrigger.index >= 0 && startTrigger.index < elem.length) {
+                    if (typeof startTrigger.method == 'function') {
+                        $(elem[startTrigger.index]).on(startTrigger.type, startTrigger.method);
+                    }
+                    $(elem[startTrigger.index]).trigger(startTrigger.type);
                 }
-                $(elem[startTrigger.index]).trigger(startTrigger.type);
             }
         }
 
@@ -177,6 +184,7 @@
         start: start
     };
 
-    return function(){};
+    return function () {
+    };
 
 }(jQuery)));
