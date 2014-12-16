@@ -1,16 +1,44 @@
 /**
+ * jQuery module to apply css changes sequencially through any list.
+ *
+ *
+ * LICENSE:
+ *
+ * Copyright (c) 2006-2014 Martin Andreas Woerz
+ *
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted under the terms of the GNU GPL  v2.0 License.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
  * $
  * @name        jquery.listeffects
- * @author      $ieservices
+ * @author      Martin Andreas Woerz <m.woerz@ieservices.de>
  * @date        $
- * @version     $
- * @contact     license [at] ieservices.de
- * @developer   Martin Andreas Woerz <martin [at] ieservices.de>
+ * @developer   Martin Andreas Woerz <m.woerz@ieservices.de>
+ * @package     jQuery Effects
+ * @category    Visualisations, Effects
  * @copyright   www.ieservices.de (c) 2010 - 2014
  * @link        http://www.ieservices.de
- * @license     GNU GPL  v2.0
+ * @license     http://www.gnu.org/licenses/gpl-2.0.html
  * @ide         Created by PhpStorm
- * @description The javascript file jquery.listeffects it to ...
+ * @link        https://github.com/ieservices/frontend-components/tree/master/jQuery/Plugins/jquery.list-effects
+ * @contact     license [at] ieservices.de
+ * @description jQuery module to apply css changes sequencially through any list.
+ * @version     $
  */
 (function (factory) {
     if (typeof define === 'function' && define.amd) {
