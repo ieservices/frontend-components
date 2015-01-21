@@ -22,12 +22,14 @@ For this effect you want to change the color (to a slight grey => #ccc) for 1 se
 
 Then you can do this:
 
+```javascript
     jQuery('#myList ul li a').listEffect(
             {delay: 1000, attribute: 'color', value: '#ccc'},
             {type: 'click', method: function(event){
                 jQuery('#result').html(this.innerText + ' clicked');
             }}
     );
+```
 
 
 WARNING
