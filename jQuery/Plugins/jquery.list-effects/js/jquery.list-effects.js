@@ -24,23 +24,23 @@
  * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
  *
- * $
+ * jquery.listeffects
  * @name        jquery.listeffects
  * @author      Martin Andreas Woerz <m.woerz@ieservices.de>
- * @date        $
+ * @date        2015-01-22 19:00
  * @developer   Martin Andreas Woerz <m.woerz@ieservices.de>
  * @package     jQuery Effects
  * @category    Visualisations, Effects
- * @copyright   www.ieservices.de (c) 2010 - 2014
+ * @copyright   www.ieservices.de (c) 2010 - 2015
  * @link        http://www.ieservices.de
  * @license     http://www.gnu.org/licenses/gpl-2.0.html
  * @ide         Created by PhpStorm
  * @link        https://github.com/ieservices/frontend-components/tree/master/jQuery/Plugins/jquery.list-effects
- * @contact     license [at] ieservices.de
+ * @contact     github [at] ieservices.de
  * @description jQuery module to apply css changes sequencially through any list.
- * @version     $
+ * @version     0.1
  */
-(function (factory) {
+;(function (factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD
         define(['jquery'], factory);
